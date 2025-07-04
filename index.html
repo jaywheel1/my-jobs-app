@@ -1,0 +1,1084 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Definitive Talent Jobs&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/papaparse/5.3.0/papaparse.min.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #0a0a0a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #e8e8e8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.admin-only {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.admin-badge {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #ff6b6b;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 5px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header .logo {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header .logo-icon {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 60px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 60px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header .logo-svg {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.5em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.header p {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #a0a0a0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.filters {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #1a1a1a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 20px rgba(0,0,0,0.4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #333;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.filter-row {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.filter-group {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.filter-group label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.filter-group select,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.filter-group input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #333;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #2a2a2a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.filter-group select:focus,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.filter-group input:focus {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #00b386;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 0 3px rgba(0, 179, 134, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.search-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #00b386 0%, #00d4aa 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.search-btn:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 5px 15px rgba(0, 179, 134, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.jobs-grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #1a1a1a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 20px rgba(0,0,0,0.4);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #333;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-5px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 30px rgba(0, 179, 134, 0.2);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #00b386;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-card::before {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #00b386 0%, #00d4aa 100%);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.4em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-company {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #a0a0a0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-details {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-tag {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #2a2a2a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #e8e8e8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 6px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.9em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #404040;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-tag.category {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #001a14;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #00b386;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #00b386;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-tag.location {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #1a1a2e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #9d4edd;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #9d4edd;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-tag.salary {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #0d2818;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #00ff88;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #00ff88;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.job-description {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #b0b0b0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: -webkit-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-line-clamp: 3;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-box-orient: vertical;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.apply-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #00b386 0%, #00d4aa 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 25px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.apply-btn:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 5px 15px rgba(0, 179, 134, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.loading {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.no-jobs {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #a0a0a0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.2em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(0,0,0,0.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(5px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #1a1a1a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 5% auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 90%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 500px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 90vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #333;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.close {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #888;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: color 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.close:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.5em;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-group {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-group label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-group input,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-group textarea {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 2px solid #333;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #2a2a2a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-group input:focus,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-group textarea:focus {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #00b386;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 0 3px rgba(0, 179, 134, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.form-group textarea {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>resize: vertical;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.submit-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #00b386 0%, #00d4aa 100%);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.submit-btn:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 5px 15px rgba(0, 179, 134, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.submit-btn:disabled {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: not-allowed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>.header h1 {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>font-size: 2em;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>.filters {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>.filter-row {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>.jobs-grid {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>grid-template-columns: 1fr;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>.job-card {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="admin-badge" id="adminBadge"&gt;🔧 ADMIN MODE&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="logo"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="logo-icon"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;stop offset="100%" style="stop-color:#00b386;stop-opacity:1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/linearGradient&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;filter id="glow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;feGaussianBlur stdDeviation="3" result="coloredBlur"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;feMerge&gt;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;feMergeNode in="coloredBlur"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;feMergeNode in="SourceGraphic"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/feMerge&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/filter&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/defs&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;path d="M50 15 L75 30 L75 60 L50 75 L25 60 L25 30 Z"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                              </span>fill="url(#logoGradient)"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                              </span>stroke="#ffffff"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                              </span>stroke-width="2"</p>
+<p class="p1"><span class="Apple-converted-space">                              </span>filter="url(#glow)"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;path d="M50 25 L65 35 L65 55 L50 65 L35 55 L35 35 Z"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                              </span>fill="none"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                              </span>stroke="#ffffff"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                              </span>stroke-width="3"</p>
+<p class="p1"><span class="Apple-converted-space">                              </span>opacity="0.8"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;path d="M50 35 L57 40 L57 50 L50 55 L43 50 L43 40 Z"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                              </span>fill="#00b386"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;path d="M50 35 L57 40 L50 45 L43 40 Z"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                              </span>fill="#00d4aa"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;path d="M50 45 L57 40 L57 50 L50 55 Z"<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                              </span>fill="#009968"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/svg&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;Definitive Talent Jobs&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Find your dream job in the decentralized world&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="filters"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="filter-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="filter-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="categoryFilter"&gt;Job Category&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select id="categoryFilter"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value=""&gt;All Categories&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;optgroup label="👨‍💻 Development"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="CTO"&gt;CTO&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="VP of Engineering"&gt;VP of Engineering&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Head of Engineering"&gt;Head of Engineering&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Technical Lead"&gt;Technical Lead&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Engineering Manager"&gt;Engineering Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Blockchain Developer"&gt;Blockchain Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Smart Contract Developer"&gt;Smart Contract Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Web3 Developer"&gt;Web3 Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="DeFi Developer"&gt;DeFi Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Full Stack Developer"&gt;Full Stack Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Frontend Developer"&gt;Frontend Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Backend Developer"&gt;Backend Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Solidity Developer"&gt;Solidity Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Rust Developer"&gt;Rust Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Go Developer"&gt;Go Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Python Developer"&gt;Python Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="JavaScript Developer"&gt;JavaScript Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Mobile Developer"&gt;Mobile Developer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="DevOps Engineer"&gt;DevOps Engineer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Security Engineer"&gt;Security Engineer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Data Engineer"&gt;Data Engineer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="QA Engineer"&gt;QA Engineer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/optgroup&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;optgroup label="📈 Marketing &amp; Growth"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="CMO"&gt;CMO&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Marketing Director"&gt;Marketing Director&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Head of Marketing"&gt;Head of Marketing&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="VP of Marketing"&gt;VP of Marketing&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Growth Manager"&gt;Growth Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Growth Hacker"&gt;Growth Hacker&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Digital Marketing Manager"&gt;Digital Marketing Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Content Manager"&gt;Content Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Community Manager"&gt;Community Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Social Media Manager"&gt;Social Media Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="PR Manager"&gt;PR Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Partnership Manager"&gt;Partnership Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Business Development Manager"&gt;Business Development Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Product Marketing Manager"&gt;Product Marketing Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/optgroup&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;optgroup label="🏢 Executive &amp; Leadership"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="CEO"&gt;CEO&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="COO"&gt;COO&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="CFO"&gt;CFO&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="CPO"&gt;CPO&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="General Counsel"&gt;General Counsel&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Chief Strategy Officer"&gt;Chief Strategy Officer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/optgroup&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;optgroup label="🎨 Design &amp; UX"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Head of Design"&gt;Head of Design&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Design Director"&gt;Design Director&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="UI/UX Designer"&gt;UI/UX Designer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Product Designer"&gt;Product Designer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Graphic Designer"&gt;Graphic Designer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="NFT Designer"&gt;NFT Designer&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/optgroup&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;optgroup label="💼 Business &amp; Operations"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Product Manager"&gt;Product Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Project Manager"&gt;Project Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Operations Manager"&gt;Operations Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Business Analyst"&gt;Business Analyst&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Financial Analyst"&gt;Financial Analyst&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Legal Counsel"&gt;Legal Counsel&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Compliance Manager"&gt;Compliance Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="HR Manager"&gt;HR Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/optgroup&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;optgroup label="💰 Sales &amp; Customer Success"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Sales Manager"&gt;Sales Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Account Executive"&gt;Account Executive&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Customer Success Manager"&gt;Customer Success Manager&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;option value="Business Development Representative"&gt;Business Development Representative&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/optgroup&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="filter-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="locationFilter"&gt;Location&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select id="locationFilter"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value=""&gt;All Locations&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Remote"&gt;Remote&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="United States"&gt;United States&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="United Kingdom"&gt;United Kingdom&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Canada"&gt;Canada&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Germany"&gt;Germany&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="France"&gt;France&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Netherlands"&gt;Netherlands&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Switzerland"&gt;Switzerland&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Singapore"&gt;Singapore&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Hong Kong"&gt;Hong Kong&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Australia"&gt;Australia&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Dubai"&gt;Dubai&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Portugal"&gt;Portugal&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Estonia"&gt;Estonia&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="filter-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="jobTypeFilter"&gt;Job Type&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;select id="jobTypeFilter"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value=""&gt;All Types&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Full-time"&gt;Full-time&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Part-time"&gt;Part-time&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Contract"&gt;Contract&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Freelance"&gt;Freelance&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;option value="Internship"&gt;Internship&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="filter-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="searchInput"&gt;Search Keywords&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" id="searchInput" placeholder="Search jobs..."&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="search-btn" onclick="filterJobs()"&gt;🔍 Search Jobs&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="search-btn admin-only" onclick="refreshJobs()" style="background: #333; margin-top: 10px;"&gt;🔄 Manual Refresh&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="search-btn admin-only" onclick="toggleAutoRefresh()" style="margin-top: 10px;"&gt;🔄 Auto-Refresh: ON&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button class="search-btn admin-only" onclick="disableAdminMode()" style="background: #ff6b6b; margin-top: 10px;"&gt;🚪 Exit Admin&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="loadingMessage" class="loading"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Loading amazing Web3 opportunities... 🚀</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="jobsContainer" class="jobs-grid" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="noJobsMessage" class="no-jobs" style="display: none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>No jobs found matching your criteria. Try adjusting your filters! 🔍</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="applicationModal" class="modal"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="close" onclick="closeModal()"&gt;&amp;times;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Apply for Job&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;form id="applicationForm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="applicantName"&gt;Full Name *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" id="applicantName" name="applicantName" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="applicantEmail"&gt;Email *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="email" id="applicantEmail" name="applicantEmail" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="applicantTelegram"&gt;Telegram Handle *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" id="applicantTelegram" name="applicantTelegram" placeholder="@username" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="applicantLocation"&gt;Location *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="text" id="applicantLocation" name="applicantLocation" placeholder="City, Country" required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="form-group"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="applicantCV"&gt;CV/Resume Link *&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="url" id="applicantCV" name="applicantCV" placeholder="https://..." required&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button type="submit" class="submit-btn" id="submitBtn"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>🚀 Submit Application</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var allJobs = [];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var currentJob = null;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var autoRefreshInterval = null;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var lastJobCount = 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var isAutoRefreshEnabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var isAdminMode = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var SHEET_ID = '1AKH-HnyeBNGYkOXhdUAFvkadVuvtjcTCs2FMrxLvfRE';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var JOBS_SHEET_NAME = 'Jobs';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var APPLICATIONS_SHEET_NAME = 'Applications';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var AUTO_REFRESH_INTERVAL = 10000;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var ADMIN_PASSWORD = 'admin123';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', function() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>loadJobs();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>startAutoRefresh();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>checkAdminMode();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>initializeEventListeners();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function initializeEventListeners() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var searchInput = document.getElementById('searchInput');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (searchInput) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>searchInput.addEventListener('input', function() {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>setTimeout(filterJobs, 300);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>var categoryFilter = document.getElementById('categoryFilter');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var locationFilter = document.getElementById('locationFilter');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var jobTypeFilter = document.getElementById('jobTypeFilter');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (categoryFilter) categoryFilter.addEventListener('change', filterJobs);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (locationFilter) locationFilter.addEventListener('change', filterJobs);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (jobTypeFilter) jobTypeFilter.addEventListener('change', filterJobs);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>var applicationForm = document.getElementById('applicationForm');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (applicationForm) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>applicationForm.addEventListener('submit', handleFormSubmission);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>window.onclick = function(event) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var modal = document.getElementById('applicationModal');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (event.target === modal) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>closeModal();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function loadJobs(silent) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>silent = silent || false;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!silent) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('loadingMessage').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('jobsContainer').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>var csvUrl = 'https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/export?format=csv&amp;gid=0';</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>fetch(csvUrl, {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>mode: 'cors',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>headers: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'Accept': 'text/csv'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>})</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.then(function(response) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (response.ok) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>return response.text();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>throw new Error('Failed to fetch');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>})</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.then(function(csvData) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Papa.parse(csvData, {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>header: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>skipEmptyLines: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>complete: function(results) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>if (results.errors.length &gt; 0 &amp;&amp; !silent) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>console.warn('CSV parsing warnings:', results.errors);</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                            </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>var newJobs = results.data.filter(function(job) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>return job['Job Title'] &amp;&amp;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                                       </span>job['Job Title'].trim() !== '' &amp;&amp;</p>
+<p class="p1"><span class="Apple-converted-space">                                       </span>job['Job Title'] !== 'Job Title';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>});</p>
+<p class="p2"><span class="Apple-converted-space">                            </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>var hasChanged = newJobs.length !== lastJobCount ||<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>JSON.stringify(newJobs) !== JSON.stringify(allJobs);</p>
+<p class="p2"><span class="Apple-converted-space">                            </span></p>
+<p class="p1"><span class="Apple-converted-space">                            </span>if (hasChanged &amp;&amp; newJobs.length &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>allJobs = newJobs;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>lastJobCount = newJobs.length;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>displayJobs(allJobs);</p>
+<p class="p2"><span class="Apple-converted-space">                                </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>if (!silent) {</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>document.getElementById('loadingMessage').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>document.getElementById('jobsContainer').style.display = 'grid';</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                                </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>if (silent &amp;&amp; hasChanged) {</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>showUpdateNotification('🔄 ' + newJobs.length + ' job(s) loaded from your Google Sheet');</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>}</p>
+<p class="p2"><span class="Apple-converted-space">                                </span></p>
+<p class="p1"><span class="Apple-converted-space">                                </span>var existingInfo = document.querySelector('.container div[style*="background: #1a1a1a"]');</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>if (existingInfo) {</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>existingInfo.remove();</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>} else if (newJobs.length === 0 &amp;&amp; !silent) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>if (!silent) console.log('No jobs found in sheet, showing sample data');</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>showSampleData();</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>error: function(error) {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>if (!silent) console.error('CSV parsing error:', error);</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>if (!silent) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>showSampleData();</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">                </span>})</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.catch(function(error) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (!silent) console.log('CSV method failed:', error);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (!silent) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>console.log('Unable to load from Google Sheets, showing sample data');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>showSampleData();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!silent) console.error('Error loading jobs:', error);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (!silent) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>showSampleData();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showSampleData() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.log('Showing sample data - add jobs to your Google Sheet to see real data');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>allJobs = [</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Job Title': 'Senior Blockchain Developer',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Company': 'DeFi Protocol',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Category': 'Blockchain Developer',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Location': 'Remote',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Job Type': 'Full-time',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Salary': '$120k - $180k',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Description': 'We are looking for a skilled blockchain developer to build and maintain smart contracts for our DeFi protocol.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Requirements': '3+ years Solidity experience, Web3.js, smart contract auditing',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Apply URL': '',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Date Posted': '2025-01-04'</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Job Title': 'Product Manager - Web3',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Company': 'Crypto Startup',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Category': 'Product Manager',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Location': 'San Francisco',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Job Type': 'Full-time',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Salary': '$130k - $200k',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Description': 'Lead product development for our innovative Web3 platform.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Requirements': '5+ years product management, Web3 knowledge, user research',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Apply URL': '',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Date Posted': '2025-01-03'</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Job Title': 'Community Manager',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Company': 'NFT Marketplace',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Category': 'Community Manager',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Location': 'Remote',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Job Type': 'Contract',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Salary': '$60k - $90k',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Description': 'Build and engage our global community across Discord, Telegram, and social media.',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Requirements': 'Social media expertise, Discord management, content creation',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Apply URL': '',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Date Posted': '2025-01-02'</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>];</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>displayJobs(allJobs);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('loadingMessage').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('jobsContainer').style.display = 'grid';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>var infoDiv = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>infoDiv.style.cssText = 'background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 15px; margin-bottom: 20px; color: #a0a0a0; text-align: center;';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>infoDiv.innerHTML = '&lt;p&gt;&lt;strong&gt;📋 Demo Mode:&lt;/strong&gt; Add jobs to your Google Sheet to see real data here!&lt;/p&gt;&lt;p style="font-size: 0.9em; margin-top: 10px;"&gt;Your Google Sheet: &lt;a href="https://docs.google.com/spreadsheets/d/' + SHEET_ID + '/edit" target="_blank" style="color: #00b386;"&gt;Edit Sheet&lt;/a&gt;&lt;/p&gt;';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelector('.container').insertBefore(infoDiv, document.getElementById('jobsContainer'));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function displayJobs(jobs) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var container = document.getElementById('jobsContainer');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (jobs.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>container.style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('noJobsMessage').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('noJobsMessage').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.style.display = 'grid';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>var jobsHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (var i = 0; i &lt; jobs.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var job = jobs[i];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var jobTitle = (job['Job Title'] || '').replace(/'/g, '&amp;#39;').replace(/"/g, '&amp;quot;');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var company = (job['Company'] || '').replace(/'/g, '&amp;#39;').replace(/"/g, '&amp;quot;');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var category = job['Category'] || '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var location = job['Location'] || '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var jobType = job['Job Type'] || '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var salary = job['Salary'] || '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var description = job['Description'] || 'No description provided.';</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobsHTML += '&lt;div class="job-card" onclick="openApplication(\'' + jobTitle + '\', \'' + company + '\')"&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobsHTML += '&lt;div class="job-header"&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobsHTML += '&lt;div class="job-title"&gt;' + job['Job Title'] + '&lt;/div&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobsHTML += '&lt;div class="job-company"&gt;' + job['Company'] + '&lt;/div&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobsHTML += '&lt;/div&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobsHTML += '&lt;div class="job-details"&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobsHTML += '&lt;span class="job-tag category"&gt;' + category + '&lt;/span&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobsHTML += '&lt;span class="job-tag location"&gt;📍 ' + location + '&lt;/span&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (jobType) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>jobsHTML += '&lt;span class="job-tag"&gt;' + jobType + '&lt;/span&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (salary) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>jobsHTML += '&lt;span class="job-tag salary"&gt;💰 ' + salary + '&lt;/span&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobsHTML += '&lt;/div&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobsHTML += '&lt;div class="job-description"&gt;' + description + '&lt;/div&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobsHTML += '&lt;button class="apply-btn" onclick="event.stopPropagation(); openApplication(\'' + jobTitle + '\', \'' + company + '\')"&gt;Apply Now 🚀&lt;/button&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jobsHTML += '&lt;/div&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>container.innerHTML = jobsHTML;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function filterJobs() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var categoryFilter = document.getElementById('categoryFilter').value.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var locationFilter = document.getElementById('locationFilter').value.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var jobTypeFilter = document.getElementById('jobTypeFilter').value.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var searchInput = document.getElementById('searchInput').value.toLowerCase();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>var filteredJobs = allJobs.filter(function(job) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var matchesCategory = !categoryFilter || job['Category'].toLowerCase().indexOf(categoryFilter) !== -1;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var matchesLocation = !locationFilter || job['Location'].toLowerCase().indexOf(locationFilter) !== -1;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var matchesJobType = !jobTypeFilter || job['Job Type'].toLowerCase().indexOf(jobTypeFilter) !== -1;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var matchesSearch = !searchInput ||<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>job['Job Title'].toLowerCase().indexOf(searchInput) !== -1 ||</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>job['Company'].toLowerCase().indexOf(searchInput) !== -1 ||</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>job['Description'].toLowerCase().indexOf(searchInput) !== -1;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>return matchesCategory &amp;&amp; matchesLocation &amp;&amp; matchesJobType &amp;&amp; matchesSearch;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>displayJobs(filteredJobs);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function startAutoRefresh() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (autoRefreshInterval) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>clearInterval(autoRefreshInterval);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>autoRefreshInterval = setInterval(function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (isAutoRefreshEnabled) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Silent check - no console messages for failed attempts</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>loadJobs(true);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, AUTO_REFRESH_INTERVAL);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function stopAutoRefresh() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (autoRefreshInterval) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>clearInterval(autoRefreshInterval);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>autoRefreshInterval = null;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function toggleAutoRefresh() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>isAutoRefreshEnabled = !isAutoRefreshEnabled;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var button = document.querySelector('[onclick="toggleAutoRefresh()"]');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (button) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.innerHTML = isAutoRefreshEnabled ? '🔄 Auto-Refresh: ON' : '⏸️ Auto-Refresh: OFF';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>button.style.background = isAutoRefreshEnabled ? 'linear-gradient(135deg, #00b386 0%, #00d4aa 100%)' : '#666';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>showUpdateNotification(isAutoRefreshEnabled ? '✅ Auto-refresh enabled - jobs will update automatically' : '⏸️ Auto-refresh disabled');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showUpdateNotification(message) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var notification = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>notification.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #00b386; color: white; padding: 15px 20px; border-radius: 8px; z-index: 1000; box-shadow: 0 4px 12px rgba(0, 179, 134, 0.3); font-weight: 500; max-width: 300px;';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>notification.innerHTML = message;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.appendChild(notification);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>setTimeout(function() {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>notification.remove();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}, 3000);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function refreshJobs() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('loadingMessage').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('jobsContainer').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('loadingMessage').innerHTML = 'Loading fresh jobs from Google Sheets... 🔄';</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>var existingInfo = document.querySelector('.container div[style*="background: #1a1a1a"]');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (existingInfo) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>existingInfo.remove();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>allJobs = [];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>lastJobCount = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>loadJobs(false);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function checkAdminMode() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var urlParams = new URLSearchParams(window.location.search);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var adminParam = urlParams.get('admin');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (adminParam === 'true') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>promptAdminPassword();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.addEventListener('keydown', function(e) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (e.ctrlKey &amp;&amp; e.altKey &amp;&amp; e.key === 'a') {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>e.preventDefault();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>promptAdminPassword();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function promptAdminPassword() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var password = prompt('Enter admin password:');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (password === ADMIN_PASSWORD) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>enableAdminMode();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (password !== null) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('❌ Incorrect password');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function enableAdminMode() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>isAdminMode = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var adminElements = document.querySelectorAll('.admin-only');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (var i = 0; i &lt; adminElements.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>adminElements[i].style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('adminBadge').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showUpdateNotification('🔧 Admin mode enabled');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function disableAdminMode() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>isAdminMode = false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var adminElements = document.querySelectorAll('.admin-only');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (var i = 0; i &lt; adminElements.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>adminElements[i].style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('adminBadge').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showUpdateNotification('👤 Admin mode disabled');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function openApplication(jobTitle, company) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!jobTitle || !company) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error('Invalid job data:', { jobTitle: jobTitle, company: company });</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('Error: Invalid job information. Please try again.');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentJob = { title: jobTitle, company: company };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('applicationModal').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('applicationForm').reset();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function closeModal() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('applicationModal').style.display = 'none';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('applicationForm').reset();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function handleFormSubmission(e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>e.preventDefault();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>var submitBtn = document.getElementById('submitBtn');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var originalText = submitBtn.innerHTML;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>submitBtn.disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>submitBtn.innerHTML = '⏳ Submitting...';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var formData = new FormData(e.target);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var applicationData = {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Job Title': currentJob ? currentJob.title : 'Unknown',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Company': currentJob ? currentJob.company : 'Unknown',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Applicant Name': formData.get('applicantName') || '',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Email': formData.get('applicantEmail') || '',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Telegram Handle': formData.get('applicantTelegram') || '',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Location': formData.get('applicantLocation') || '',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'CV/Resume Link': formData.get('applicantCV') || '',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>'Date Applied': new Date().toISOString().split('T')[0]</p>
+<p class="p1"><span class="Apple-converted-space">                </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>var requiredFields = ['Applicant Name', 'Email', 'Telegram Handle', 'Location', 'CV/Resume Link'];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>var missingFields = requiredFields.filter(function(field) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return !applicationData[field];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (missingFields.length &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>throw new Error('Please fill in all required fields: ' + missingFields.join(', '));</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>submitApplication(applicationData).then(function(result) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (result.success) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>alert('🎉 Application submitted successfully! We\'ll be in touch soon.');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>closeModal();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>throw new Error(result.message || 'Submission failed');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}).catch(function(error) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>console.error('Error submitting application:', error);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>alert('❌ ' + (error.message || 'There was an error submitting your application. Please try again.'));</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}).finally(function() {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>submitBtn.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>submitBtn.innerHTML = originalText;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error('Error submitting application:', error);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>alert('❌ ' + (error.message || 'There was an error submitting your application. Please try again.'));</p>
+<p class="p1"><span class="Apple-converted-space">                </span>submitBtn.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>submitBtn.innerHTML = originalText;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function submitApplication(data) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return new Promise(function(resolve, reject) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>console.log('Application data:', data);</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>setTimeout(function() {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>resolve({ success: true });</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}, 1000);</p>
+<p class="p2"><span class="Apple-converted-space">                    </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>console.error('Submission error:', error);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>reject(error);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>window.addEventListener('beforeunload', function() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>stopAutoRefresh();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
